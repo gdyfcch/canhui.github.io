@@ -172,39 +172,6 @@ e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["
    	var $window=$(window),gardenCtx,gardenCanvas,$garden,garden;var clientWidth=$(window).width();var clientHeight=$(window).height();$(function(){$loveHeart=$("#loveHeart");var a=$loveHeart.width()/2;var b=$loveHeart.height()/2-55;$garden=$("#garden");gardenCanvas=$garden[0];gardenCanvas.width=$("#loveHeart").width();gardenCanvas.height=$("#loveHeart").height();gardenCtx=gardenCanvas.getContext("2d");gardenCtx.globalCompositeOperation="lighter";garden=new Garden(gardenCtx,gardenCanvas);$("#content").css("width",$loveHeart.width()+$("#code").width());$("#content").css("height",Math.max($loveHeart.height(),$("#code").height()));$("#content").css("margin-top",Math.max(($window.height()-$("#content").height())/2,10));$("#content").css("margin-left",Math.max(($window.width()-$("#content").width())/2,10));setInterval(function(){garden.render()},Garden.options.growSpeed)});$(window).resize(function(){var b=$(window).width();var a=$(window).height();if(b!=clientWidth&&a!=clientHeight){location.replace(location)}});function getHeartPoint(c){var b=c/Math.PI;var a=19.5*(16*Math.pow(Math.sin(b),3));var d=-20*(13*Math.cos(b)-5*Math.cos(2*b)-2*Math.cos(3*b)-Math.cos(4*b));return new Array(offsetX+a,offsetY+d)}function startHeartAnimation(){var c=50;var d=10;var b=new Array();var a=setInterval(function(){var h=getHeartPoint(d);var e=true;for(var f=0;f<b.length;f++){var g=b[f];var j=Math.sqrt(Math.pow(g[0]-h[0],2)+Math.pow(g[1]-h[1],2));if(j<Garden.options.bloomRadius.max*1.3){e=false;break}}if(e){b.push(h);garden.createRandomBloom(h[0],h[1])}if(d>=30){clearInterval(a);showMessages()}else{d+=0.2}},c)}(function(a){a.fn.typewriter=function(){this.each(function(){var d=a(this),c=d.html(),b=0;d.html("");var e=setInterval(function(){var f=c.substr(b,1);if(f=="<"){b=c.indexOf(">",b)+1}else{b++}d.html(c.substring(0,b)+(b&1?"_":""));if(b>=c.length){clearInterval(e)}},75)});return this}})(jQuery);function timeElapse(c){var e=Date();var f=(Date.parse(e)-Date.parse(c))/1000;var g=Math.floor(f/(3600*24));f=f%(3600*24);var b=Math.floor(f/3600);if(b<10){b="0"+b}f=f%3600;var d=Math.floor(f/60);if(d<10){d="0"+d}f=f%60;if(f<10){f="0"+f}var a='<span class="digit">'+g+'</span> days <span class="digit">'+b+'</span> hours <span class="digit">'+d+'</span> minutes <span class="digit">'+f+"</span> seconds";$("#elapseClock").html(a)}function showMessages(){$("#messages").fadeIn(5000,function(){showLoveU()})}function adjustWordsPosition(){$("#words").css("position","absolute");$("#words").css("top",$("#garden").position().top+195);$("#words").css("left",$("#garden").position().left+70)}function adjustCodePosition(){$("#code").css("margin-top",($("#garden").height()-$("#code").height())/2)}function showLoveU(){$("#loveu").fadeIn(3000)};
    </script>
 </head>
-
-<body>
-    <div id="mainDiv">
-        <div id="content">
-            <div id="code">
-                <span class="comments">/**</span><br />
-                <span class="space"/><span class="comments">* We are both XXX Unversity  business administration and programmers,</span><br />
-                <span class="space"/><span class="comments">* so I write some code to show my love to you.</span><br />
-                <span class="space"/><span class="comments">*/</span><br />
-                Boy i = <span class="keyword">new</span> Boy(<span class="string">"boyname"</span>);<br />
-                Girl u = <span class="keyword">new</span> Girl(<span class="string">"girlname"</span>);<br />
-                <span class="comments">// April 28, 2012, I told you I love you. </span><br />
-                i.love(u);<br />
-                <span class="comments">// but..., what you said that meaning we are still good friends.</span><br />
-                u.sayOtherthing();<br />
-                <span class="comments">// Since then, I ask you for the reason.</span><br />
-                <span class="keyword">var</span> reason=i.ask(u);<br />
-                <span class="comments">// you say we were not understand enough for each other .</span><br />
-                $("body").append(reason);<br />
-                <span class="comments">// You say that it is too quickily to turn our relation of lover.</span><br />
-                <span class="comments">// And take care of u and our love.</span><br />
-                i.takeCareOf(u);<br />
-                <span class="comments">// So I keep waiting and I have confidence that you will.</span><br />
-                <span class="keyword">boolean</span> isAccept = <span class="keyword">false</span>;<br />
-                <span class="keyword">while</span> (isAccept) {<br />
-                <span class="placeholder"/>i.waitFor(u);<br />
-                <span class="placeholder"/><span class="comments">// I think it is an important decision</span><br />
-                <span class="placeholder"/><span class="comments">// and you should forgot the unhappy things that happended before.</span><br />
-                <span class="placeholder"/>isAccept = u.thinkOver();<br />
-                }<br />
-                <span class="comments">// After a please sound of accept, we will live happily ever after.</span><br />
-                u.accept(i);<br />
-                i.liveHappilyWith(u);<br />
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-3712320065678109";
 /* lovead */
@@ -216,7 +183,10 @@ google_ad_height = 50;
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-            </div>
+<body>
+    <div id="mainDiv">
+        <div id="content">
+
             <div id="loveHeart">
                 <canvas id="garden"></canvas>
                 <div id="words">
@@ -234,13 +204,13 @@ google_ad_height = 50;
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 </center>
-                        girlname, I will have fallen in love with you for
+                        刘露，我的小宝贝，感谢与你相遇，七夕有你真好。
                         <div id="elapseClock" style="display:none"></div>
-                        <a href='#' id="accept">click me if accept me</a>
+
                     </div>
                     <div id="loveu">
                         Love u forever and ever.<br/>
-                        <div class="signature">- boyname</div>
+                        <div class="signature">- 辉总</div>
                     </div>
                 </div>
             </div>
@@ -250,33 +220,13 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
         var offsetX = $("#loveHeart").width() / 2;
         var offsetY = $("#loveHeart").height() / 2 - 55;
         
-        if (!document.createElement('canvas').getContext) {
-            var msg = document.createElement("div");
-            msg.id = "errorMsg";
-            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
-            document.body.appendChild(msg);
-            $("#code").css("display", "none")
-            $("#copyright").css("position", "absolute");
-            $("#copyright").css("bottom", "10px");
-            document.execCommand("stop");
-        } else {
             setTimeout(function () {
                 adjustWordsPosition();
                 startHeartAnimation();
-            }, 10000);
+            }, 1000);
             
-            $("#accept").click(function(){
-                $(this).hide();
-                $("#elapseClock").show();
-                var together = new Date();
-                timeElapse(together);
-                setInterval(function () {
-                    timeElapse(together);
-                }, 500);
-            })
             adjustCodePosition();
             $("#code").typewriter();
-        }
     </script>
 </body>
 </html>
